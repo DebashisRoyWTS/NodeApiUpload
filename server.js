@@ -4,10 +4,12 @@ const mongoose = require('mongoose')
 require('dotenv').config()
 const path = require('path')
 const bodyParser = require('body-parser')
+const cors = require('cors')
 
 app.use(express.urlencoded({ extended: true }))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
+app.use(cors())
 const dbDriver =
   'mongodb+srv://debashis:R7KmV58sN3smMeN@cluster0.eihs8.mongodb.net/API'
 
