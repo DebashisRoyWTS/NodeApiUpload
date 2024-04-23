@@ -17,7 +17,7 @@ const apiRoutes = require('./routes/crudApi.routes')
 app.use('/api', apiRoutes)
 
 const port = process.env.PORT || 2023
-
+mongoose.set('strictQuery', true)
 mongoose
   .connect(dbDriver, {
     useNewUrlParser: true,
@@ -30,5 +30,5 @@ mongoose
     })
   })
   .catch((err) => {
-    console.log('Error')
+    console.log('Error',err)
   })

@@ -4,6 +4,7 @@ const crudApiController = require('../controller/crudApi.controller')
 router.get('/', crudApiController.showMessage)
 router.post('/insert', crudApiController.insert)
 router.get('/fetchData', crudApiController.fetchData)
+router.get('/fetchDataById/:id', crudApiController.fetchDataById)
 router.get('/delete/:id', crudApiController.delete)
 router.post('/update/:id', crudApiController.update)
 

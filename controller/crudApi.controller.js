@@ -74,6 +74,22 @@ class crudApiController {
       throw err
     }
   }
+  /**
+   * @Method fetchDataById
+   * @Description To Show Data By Id
+   */
+
+  async fetchDataById(req, res) {
+    try {
+      let singleData = await crudApiModel.findOne({_id:req.params.id})
+      return res.status(200).json({
+        message: 'Data fetched Successfully',
+        data: singleData,
+      })
+    } catch (err) {
+      throw err
+    }
+  }
 
   /**
    * @Method delete
